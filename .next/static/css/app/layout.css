@@ -41,7 +41,8 @@ html,
   line-height: 1.5; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
-  tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
@@ -75,7 +76,8 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr:where([title]) {
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /*
@@ -340,6 +342,11 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
 input::placeholder,
 textarea::placeholder {
   opacity: 1; /* 1 */
@@ -536,14 +543,28 @@ video {
 /* Feed Component */
 /* Form Component */
 /* Nav Component */
+/* .logo_text {
+        @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+    } */
 /* PromptCard Component */
 .flex-center{
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.flex-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mb-16{
+  margin-bottom: 4rem;
+}
 .mt-5{
   margin-top: 1.25rem;
+}
+.flex{
+  display: flex;
 }
 .w-full{
   width: 100%;
@@ -553,6 +574,9 @@ video {
 }
 .flex-col{
   flex-direction: column;
+}
+.gap-2{
+  gap: 0.5rem;
 }
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -570,10 +594,21 @@ video {
   --tw-gradient-to: #eab308 var(--tw-gradient-to-position);
 }
 .bg-clip-text{
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.pt-3{
+  padding-top: 0.75rem;
 }
 .text-center{
   text-align: center;
+}
+.font-satoshi{
+  font-family: Satoshi, sans-serif;
 }
 .text-5xl{
   font-size: 3rem;
@@ -586,8 +621,14 @@ video {
 .font-extrabold{
   font-weight: 800;
 }
+.font-semibold{
+  font-weight: 600;
+}
 .leading-\[1\.15\]{
   line-height: 1.15;
+}
+.tracking-wide{
+  letter-spacing: 0.025em;
 }
 .text-black{
   --tw-text-opacity: 1;
@@ -638,6 +679,7 @@ video {
 }
 
 .gradient {
+    height: -moz-fit-content;
     height: fit-content;
     z-index: 3;
     max-width: 640px;
@@ -666,7 +708,12 @@ video {
 }
 
 /* Tailwind Styles */
+@media not all and (min-width: 640px){
 
+  .max-sm\:hidden{
+    display: none;
+  }
+}
 @media (min-width: 640px){
 
   .sm\:text-5xl{
@@ -678,8 +725,12 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-}
 
+  .sm\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
 @media (min-width: 768px){
 
   .md\:hidden{

@@ -1,7 +1,9 @@
 import "@styles/globals.css";
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
-  title: "Prompts Galore",
+  title: "Suggestions à Gogo",
   description: "Discover and Share Prompts AI",
 };
 
@@ -12,7 +14,10 @@ const RootLayout = ({ children }) => {
         <div className="main">
           <div className="gradient" />
         </div>
-        <main className="app">{children}</main>
+        <main className="app">
+          <Nav />
+          {children}
+        </main>
       </body>
     </html>
   );
