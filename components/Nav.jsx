@@ -5,6 +5,8 @@ import Image from "next/image";
 import { signIn, signOut, getServerSession, getProviders } from "next-auth";
 
 const Nav = () => {
+  const isUserLoggedIn = true;
+
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2 flex-center">
@@ -19,6 +21,36 @@ const Nav = () => {
           Suggestions à Gogo
         </p>
       </Link>
+
+      {/* //desktop nav */}
+      <div className="sm:flex hidden">
+        {isUserLoggedIn ? (
+          <div className="flex gap-3 md:gap-5">
+            <Link
+              href="/create-prompt"
+              className="rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center">
+              Créer un post
+            </Link>
+            <button
+              type="button"
+              onClikck={signOut}
+              className="rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center">
+              Déconnexion
+            </button>
+            <Link href="/profile">
+              <Image
+                src="/assets/images/logo.svg"
+                width={37}
+                height={37}
+                clasname="rounded-full"
+                alt="profile"
+              />
+            </Link>
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
     </nav>
   );
 };
