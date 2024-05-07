@@ -1,11 +1,23 @@
-// "use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import { signIn, signOut, getServerSession, getProviders } from "next-auth";
+import { signIn, signOut, getServerSession } from "next-auth/react";
+import { getProviders } from "next-auth/react";
+import { useEffect, useState } from "react";
 
 const Nav = () => {
   const isUserLoggedIn = true;
+  //   to use auth func
+  const [providers, setProviders] = useState(null);
+
+  useEffect(() => {
+    const setUpProviders = async () => {
+      const response = await getProviders();
+      setProviders(response);
+    };
+    setUpProviders();
+  }, []);
 
   return (
     <nav className="flex-between w-full mb-16 pt-3">
@@ -33,7 +45,7 @@ const Nav = () => {
             </Link>
             <button
               type="button"
-              onClikck={signOut}
+              onClick={signOut}
               className="rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center">
               Déconnexion
             </button>
@@ -48,7 +60,46 @@ const Nav = () => {
             </Link>
           </div>
         ) : (
-          <></>
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type="button"
+                  key={provider.name}
+                  onClick={() => signIn(provider.id)}
+                  className="rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center">
+                  Connexion
+                </button>
+              ))}
+          </>
+        )}
+      </div>
+      {/* mobile Navigation */}
+      <div className="sm:hidden flex relative">
+        {isUserLoggedIn ? (
+          <div className="flex">
+            <Image
+              src="/assets/images/logo.svg"
+              width={37}
+              height={37}
+              className="rounded-full"
+              alt="profile"
+              onClick={() => {}}
+            />
+          </div>
+        ) : (
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type="button"
+                  key={provider.name}
+                  onClick={() => signIn(provider.id)}
+                  className="rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center">
+                  Connexion
+                </button>
+              ))}
+          </>
         )}
       </div>
     </nav>
