@@ -10,6 +10,7 @@ const Nav = () => {
   const isUserLoggedIn = true;
   //   to use auth func
   const [providers, setProviders] = useState(null);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
     const setUpProviders = async () => {
@@ -75,6 +76,7 @@ const Nav = () => {
         )}
       </div>
       {/* mobile Navigation */}
+
       <div className="sm:hidden flex relative">
         {isUserLoggedIn ? (
           <div className="flex">
@@ -84,8 +86,34 @@ const Nav = () => {
               height={37}
               className="rounded-full"
               alt="profile"
-              onClick={() => {}}
+              onClick={() => setToggleDropdown((prev) => !prev)}
             />
+
+            {toggleDropdown && (
+              <div className="dropdown">
+                <Link
+                  href="/profile"
+                  className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium"
+                  onclick={() => setToggleDropdown(false)}>
+                  Mon profile
+                </Link>
+                <Link
+                  href="/create-prompt"
+                  className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium"
+                  onclick={() => setToggleDropdown(false)}>
+                  Creer un prompt
+                </Link>
+                <button
+                  type="button"
+                  onclick={() => {
+                    setToggleDropdown(false);
+                    signOut();
+                  }}
+                  className="mt-5 w-full black_btn">
+                  Sign out
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           <>
