@@ -8089,7 +8089,7 @@ class Router {
         };
         if ("TURBOPACK compile-time truthy", 1) {
             const { BloomFilter } = __turbopack_require__("[project]/node_modules/next/dist/shared/lib/bloom-filter.js [client] (ecmascript)");
-            const routerFilterSValue = ("TURBOPACK compile-time value", JSON.parse('{"numItems":1,"errorRate":0.0001,"numBits":20,"numHashes":14,"bitArray":[1,0,0,1,1,0,0,1,0,0,1,0,0,0,1,1,0,0,1,1]}'));
+            const routerFilterSValue = ("TURBOPACK compile-time value", JSON.parse('{"numItems":2,"errorRate":0.0001,"numBits":39,"numHashes":14,"bitArray":[1,1,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,1,1,0,1,1,1,0,0,0,0,1,1,1,0,0,0,1,0,1,1,0,1]}'));
             const staticFilterData = routerFilterSValue ? routerFilterSValue : undefined;
             const routerFilterDValue = ("TURBOPACK compile-time value", JSON.parse('{"numItems":1,"errorRate":0.0001,"numBits":20,"numHashes":14,"bitArray":[1,0,0,0,0,0,1,1,1,0,1,1,0,1,0,1,0,1,1,1]}'));
             const dynamicFilterData = routerFilterDValue ? routerFilterDValue : undefined;
@@ -17780,7 +17780,7 @@ function AppContainer(param) {
                             children: /*#__PURE__*/ (0, _jsxruntime.jsx)(_headmanagercontextsharedruntime.HeadManagerContext.Provider, {
                                 value: headManager,
                                 children: /*#__PURE__*/ (0, _jsxruntime.jsx)(_imageconfigcontextsharedruntime.ImageConfigContext.Provider, {
-                                    value: ("TURBOPACK compile-time value", JSON.parse('{"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false,"domains":[],"remotePatterns":[]}')),
+                                    value: ("TURBOPACK compile-time value", JSON.parse('{"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false,"domains":["lh3.googleusercontent.com"],"remotePatterns":[]}')),
                                     children: children
                                 })
                             })

@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/components/Form.jsx"],"sourcesContent":["import React from \"react\";\n\nconst Form = () => {\n  return <div>Form</div>;\n};\n\nexport default Form;\n"],"names":[],"mappings":";;;;;;;;AAEA,MAAM,OAAO;IACX,qBAAO,wPAAC;kBAAI;;;;;;AACd;uCAEe"}},
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/app/create-prompt/page.jsx"],"sourcesContent":["\"use client\";\nimport React from \"react\";\nimport { useSession } from \"next-auth/react\";\nimport { useRouter } from \"next/navigation\";\nimport Form from \"@components/Form\";\n\nconst CreatePrompt = () => {\n  return <></>;\n};\n\nexport default CreatePrompt;\n"],"names":[],"mappings":";;;;;;;;;AAAA;;;;;;AAMA,MAAM,eAAe;IACnB,qBAAO;AACT;uCAEe"}},
+    {"offset": {"line": 47, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO"}},
+    {"offset": {"line": 56, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

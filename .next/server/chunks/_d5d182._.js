@@ -28,8 +28,8 @@ const UserSchema = new __TURBOPACK__commonjs__external__mongoose__["Schema"]({
             "Username is required!"
         ],
         match: [
-            /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
-            "Username invalid, it should contain 8-20 alphanumeric letters and be unique!"
+            /^(?=.{4,21}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
+            "Username invalid, it should contain 4-20 alphanumeric letters and be unique!"
         ]
     },
     image: {
@@ -78,7 +78,7 @@ __turbopack_esm__({
     "GET": ()=>handler,
     "POST": ()=>handler
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$next$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next-auth/next/index.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next-auth/index.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$providers$2f$google$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next-auth/providers/google.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$user$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/models/user.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$database$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/utils/database.js [app-route] (ecmascript)");
@@ -87,38 +87,42 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$database$2e$js__$5b
 ;
 ;
 ;
-const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$next$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])({
+const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])({
     providers: [
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$providers$2f$google$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET
         })
     ],
-    async session ({ session }) {
-        // store the user id from MongoDB to session
-        const sessionUser = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$user$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
-            email: session.user.email
-        });
-        session.user.id = sessionUser._id.toString();
-        return session;
-    },
-    async signIn ({ profile }) {
-        try {
-            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$database$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["connectToDB"])();
-            const userExists = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$user$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
-                email: profile.email
+    callbacks: {
+        async session ({ session }) {
+            // store the user id from MongoDB to session
+            const sessionUser = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$user$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
+                email: session.user.email
             });
-            if (!userExists) {
-                await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$user$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].create({
-                    email: profile.email,
-                    username: profile.name.replace(" ", "").toLowerCase(),
-                    image: profile.picture
+            session.user.id = sessionUser._id.toString();
+            return session;
+        },
+        async signIn ({ account, profile, user, credentials }) {
+            try {
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$database$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["connectToDB"])();
+                // check if user already exists
+                const userExists = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$user$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
+                    email: profile.email
                 });
+                // if not, create a new document and save user in MongoDB
+                if (!userExists) {
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$user$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].create({
+                        email: profile.email,
+                        username: profile.name.replace(/\s/g, "").toLowerCase(),
+                        image: profile.picture
+                    });
+                }
+                return true;
+            } catch (error) {
+                console.log("Error checking if user exists: ", error.message);
+                return false;
             }
-            return true;
-        } catch (error) {
-            console.log("Error checking if user exists: ", error.message);
-            return false;
         }
     }
 });
