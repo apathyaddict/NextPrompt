@@ -135,7 +135,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "submit",
                                 disabled: submitting,
-                                className: "px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white",
+                                className: "px-5 py-1.5 text-sm bg-blue-600 rounded-full text-white",
                                 children: submitting ? `${type}ing...` : type
                             }, void 0, false, {
                                 fileName: "[project]/components/Form.jsx",
@@ -186,17 +186,18 @@ var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
-;
 const CreatePrompt = ()=>{
     _s();
-    const [submitting, setSumitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    const { data: session } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"])();
+    const [submitting, setIsSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [post, setPost] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         prompt: "",
         tag: ""
     });
     const createPrompt = async (e)=>{
         e.preventDefault();
-        setSumitting(true);
+        setIsSubmitting(true);
         try {
             const response = await fetch("/api/prompt/new", {
                 method: "POST",
@@ -207,27 +208,32 @@ const CreatePrompt = ()=>{
                 })
             });
             if (response.ok) {
-                Router.push("/");
+                router.push("/");
             }
         } catch (error) {
             console.log(error);
         } finally{
-            setSumitting(false);
+            setIsSubmitting(false);
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Form$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-        type: "Créer",
+        type: "Create",
         post: post,
         setPost: setPost,
         submitting: submitting,
         handleSubmit: createPrompt
     }, void 0, false, {
         fileName: "[project]/app/create-prompt/page.jsx",
-        lineNumber: 40,
+        lineNumber: 41,
         columnNumber: 5
     }, this);
 };
-_s(CreatePrompt, "uc6+bUgvjBmRa70wEw0u6SmB67Q=");
+_s(CreatePrompt, "pPKydj1FIL1L70fJvS7xJNZ8+rY=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"]
+    ];
+});
 _c = CreatePrompt;
 const __TURBOPACK__default__export__ = CreatePrompt;
 var _c;

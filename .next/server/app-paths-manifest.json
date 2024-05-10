@@ -1,4 +1,6 @@
 {
   "/create-prompt/page": "app/create-prompt/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/prompt/new/route": "app/api/prompt/new/route.js",
+  "/page": "app/page.js"
 }

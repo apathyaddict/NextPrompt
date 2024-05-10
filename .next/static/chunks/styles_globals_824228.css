@@ -389,6 +389,22 @@ img, video {
   color: #0000;
 }
 
+.desc {
+  margin-top: 1.25rem;
+  max-width: 42rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+@media (width >= 640px) {
+  .desc {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 .glassmorphism {
   border-radius: .75rem;
   border-width: 1px;
@@ -565,9 +581,9 @@ img, video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-primary-orange {
+.bg-blue-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 87 34 / var(--tw-bg-opacity));
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
