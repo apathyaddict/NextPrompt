@@ -21,7 +21,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                     className: "blue_gradient",
                     children: [
                         type,
-                        " un post "
+                        " a post "
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Form.jsx",
@@ -37,7 +37,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                 className: "desc text-left max-w-md",
                 children: [
                     type,
-                    " des suggestions avec les autres. Fait place à ton imagination sur n'importe quelle plaforme IA."
+                    " a post to share with others. Be Kind, be wise. be like Socrates but less of a jerk."
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Form.jsx",
@@ -52,7 +52,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "font-satoshi font-semibold text-base text-gray-700",
-                                children: "Votre Suggestion IA"
+                                children: "Your life Advice"
                             }, void 0, false, {
                                 fileName: "[project]/components/Form.jsx",
                                 lineNumber: 18,
@@ -64,7 +64,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                                         ...post,
                                         prompt: e.target.value
                                     }),
-                                placeholder: "Votre suggestion ici",
+                                placeholder: "Your Wisdom here...",
                                 required: true,
                                 className: "form_textarea "
                             }, void 0, false, {
@@ -83,11 +83,10 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "font-satoshi font-semibold text-base text-gray-700",
                                 children: [
-                                    "Domaine de la suggestion",
-                                    " ",
+                                    "Tag your Wisdom",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "font-normal",
-                                        children: "(#produit, #webdevelopment, #idee, etc.)"
+                                        children: "(#life, #work, #people, etc.)"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Form.jsx",
                                         lineNumber: 34,
@@ -111,7 +110,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                                 className: "form_input"
                             }, void 0, false, {
                                 fileName: "[project]/components/Form.jsx",
-                                lineNumber: 38,
+                                lineNumber: 36,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -126,10 +125,10 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/",
                                 className: "text-gray-500 text-sm",
-                                children: "Annuler"
+                                children: "Cancel"
                             }, void 0, false, {
                                 fileName: "[project]/components/Form.jsx",
-                                lineNumber: 49,
+                                lineNumber: 47,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -139,13 +138,13 @@ const Form = ({ type, post, setPost, submitting, handleSubmit })=>{
                                 children: submitting ? `${type}ing...` : type
                             }, void 0, false, {
                                 fileName: "[project]/components/Form.jsx",
-                                lineNumber: 53,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Form.jsx",
-                        lineNumber: 48,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, this)
                 ]

@@ -43,13 +43,13 @@ const Nav = () => {
             <Link
               href="/create-prompt"
               className="rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center">
-              Créer un post
+              Create a Post
             </Link>
             <button
               type="button"
               onClick={signOut}
               className="rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center">
-              Déconnexion
+              Sign Out
             </button>
             <Link href="/profile">
               <Image
@@ -70,7 +70,7 @@ const Nav = () => {
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
                   className="rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center">
-                  Connexion
+                  Sign In
                 </button>
               ))}
           </>
@@ -102,7 +102,7 @@ const Nav = () => {
                   href="/create-prompt"
                   className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium"
                   onclick={() => setToggleDropdown(false)}>
-                  Creer un prompt
+                  Create a Post
                 </Link>
                 <button
                   type="button"
@@ -125,7 +125,7 @@ const Nav = () => {
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
                   className="rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center">
-                  Connexion
+                  Sign In
                 </button>
               ))}
           </>

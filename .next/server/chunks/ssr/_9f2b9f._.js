@@ -65,7 +65,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Provider$2e$js
 ;
 const metadata = {
     title: "Suggestions à Gogo",
-    description: "Discover and Share Prompts AI"
+    description: "Discover and Share Life Advice"
 };
 const RootLayout = ({ children })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -173,7 +173,7 @@ const Home = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: "mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-center",
                         children: [
-                            "A toi de decouvrir et partager",
+                            "Create and Share",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {
                                 className: "max=md:hidden"
                             }, void 0, false, {
@@ -183,7 +183,7 @@ const Home = ()=>{
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "text-center bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent",
-                                children: "des instructions pour l'IA"
+                                children: "Advice and Tips for Everyday"
                             }, void 0, false, {
                                 fileName: "[project]/app/page.jsx",
                                 lineNumber: 10,
@@ -197,7 +197,7 @@ const Home = ()=>{
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: " mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl text-center",
-                        children: "Suggestions à GoGo est un programme open-source IA. Outil à suggestion pour le monde moderne, afin de partager et de decouvrir des suggestions."
+                        children: "Life is tough. We're all lost. Maybe along the way, you discovered something worthwhile. Share some wisdome. We all need it."
                     }, void 0, false, {
                         fileName: "[project]/app/page.jsx",
                         lineNumber: 14,
@@ -211,7 +211,7 @@ const Home = ()=>{
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Feed$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/page.jsx",
-                lineNumber: 21,
+                lineNumber: 20,
                 columnNumber: 7
             }, this)
         ]

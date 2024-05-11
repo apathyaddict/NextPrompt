@@ -71,7 +71,7 @@ const Nav = ()=>{
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             href: "/create-prompt",
                             className: "rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center",
-                            children: "Créer un post"
+                            children: "Create a Post"
                         }, void 0, false, {
                             fileName: "[project]/components/Nav.jsx",
                             lineNumber: 43,
@@ -81,7 +81,7 @@ const Nav = ()=>{
                             type: "button",
                             onClick: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["signOut"],
                             className: "rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center",
-                            children: "Déconnexion"
+                            children: "Sign Out"
                         }, void 0, false, {
                             fileName: "[project]/components/Nav.jsx",
                             lineNumber: 48,
@@ -115,7 +115,7 @@ const Nav = ()=>{
                             type: "button",
                             onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["signIn"])(provider.id),
                             className: "rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center",
-                            children: "Connexion"
+                            children: "Sign In"
                         }, provider.name, false, {
                             fileName: "[project]/components/Nav.jsx",
                             lineNumber: 68,
@@ -161,7 +161,7 @@ const Nav = ()=>{
                                     href: "/create-prompt",
                                     className: "text-sm font-inter text-gray-700 hover:text-gray-500 font-medium",
                                     onclick: ()=>setToggleDropdown(false),
-                                    children: "Creer un prompt"
+                                    children: "Create a Post"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Nav.jsx",
                                     lineNumber: 101,
@@ -196,7 +196,7 @@ const Nav = ()=>{
                             type: "button",
                             onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["signIn"])(provider.id),
                             className: "rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center",
-                            children: "Connexion"
+                            children: "Sign In"
                         }, provider.name, false, {
                             fileName: "[project]/components/Nav.jsx",
                             lineNumber: 123,

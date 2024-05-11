@@ -4,11 +4,11 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className="w-full max-w-full flex-start flex-col">
       <h1 className="head_text text-left">
-        <span className="blue_gradient">{type} un post </span>
+        <span className="blue_gradient">{type} a post </span>
       </h1>
       <p className="desc text-left max-w-md">
-        {type} des suggestions avec les autres. Fait place à ton imagination sur
-        n'importe quelle plaforme IA.
+        {type} a post to share with others. Be Kind, be wise. be like Socrates
+        but less of a jerk.
       </p>
 
       <form
@@ -16,13 +16,13 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism">
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
-            Votre Suggestion IA
+            Your life Advice
           </span>
 
           <textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
-            placeholder="Votre suggestion ici"
+            placeholder="Your Wisdom here..."
             required
             className="form_textarea "
           />
@@ -30,10 +30,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
-            Domaine de la suggestion{" "}
-            <span className="font-normal">
-              (#produit, #webdevelopment, #idee, etc.)
-            </span>
+            Tag your Wisdom
+            <span className="font-normal">(#life, #work, #people, etc.)</span>
           </span>
           <input
             value={post.tag}
@@ -47,7 +45,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
         <div className="flex-end mx-3 mb-5 gap-4">
           <Link href="/" className="text-gray-500 text-sm">
-            Annuler
+            Cancel
           </Link>
 
           <button

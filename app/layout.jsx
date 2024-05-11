@@ -4,7 +4,7 @@ import Provider from "@components/Provider";
 
 export const metadata = {
   title: "Suggestions à Gogo",
-  description: "Discover and Share Prompts AI",
+  description: "Discover and Share Life Advice",
 };
 
 const RootLayout = ({ children }) => {
