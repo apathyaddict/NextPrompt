@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 import axios from "axios";
 
-const Feed = () => {
+const Feed = ({ router }) => {
   const [posts, setAllPosts] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
@@ -38,28 +38,24 @@ const Feed = () => {
     fetchPosts();
   }, []);
 
-  const searchPrompts = async (searchText) => {
-    try {
-      let params = {};
+  useEffect(() => {
+    router.push(`/api/prompt?search=${searchText}`);
+  }, [searchText, router]);
 
-      if (searchText) {
-        params = {
-          prompt: prompt,
-          // creator: creator,
-          // tag:tag,
-        };
-      }
-
-      const response = await axios.get(`api/prompt`, params);
-      const promptResult = response.data;
-      console.log(promptResult, "results");
-      return promptResult;
-    } catch (error) {
-      if (error.response) {
-        console.log(error.response.data.error);
-      }
-    }
-  };
+  // const searchPrompts = async (searchText) => {
+  //   try {
+  //     const response = await axios.get(
+  //       `api/prompt?search=${encodeURIComponent(searchText)}`
+  //     );
+  //     setSearchedResults(response.data);
+  //     console.log(searchedResults);
+  //     return searchedResults;
+  //   } catch (error) {
+  //     if (error.response) {
+  //       console.log(error.response.data.error);
+  //     }
+  //   }
+  // };
 
   return (
     <section className="feed">
@@ -72,7 +68,7 @@ const Feed = () => {
           required
           className="search_input peer"
         />
-        <button onClick={searchPrompts}>Search</button>
+        {/* <button onClick={searchPrompts}>Search</button> */}
       </form>
 
       <PromptCardList data={posts} handleTagClick={() => {}} />
