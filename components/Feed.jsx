@@ -3,6 +3,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
+import axios from "axios";
 
 const Feed = () => {
   const [posts, setAllPosts] = useState([]);
@@ -24,7 +25,9 @@ const Feed = () => {
     );
   };
 
-  const handleSearchChange = (e) => {};
+  const handleSearchChange = (e) => {
+    setSearchText(e.target.value);
+  };
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -34,6 +37,29 @@ const Feed = () => {
     };
     fetchPosts();
   }, []);
+
+  const searchPrompts = async (searchText) => {
+    try {
+      let params = {};
+
+      if (searchText) {
+        params = {
+          prompt: prompt,
+          // creator: creator,
+          // tag:tag,
+        };
+      }
+
+      const response = await axios.get(`api/prompt`, params);
+      const promptResult = response.data;
+      console.log(promptResult, "results");
+      return promptResult;
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data.error);
+      }
+    }
+  };
 
   return (
     <section className="feed">
@@ -46,6 +72,7 @@ const Feed = () => {
           required
           className="search_input peer"
         />
+        <button onClick={searchPrompts}>Search</button>
       </form>
 
       <PromptCardList data={posts} handleTagClick={() => {}} />
