@@ -19,8 +19,6 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     setTimeout(() => setCopied(""), 3000);
   };
 
-  console.log("3", post);
-
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">

@@ -29,7 +29,6 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
         navigator.clipboard.writeText(post.prompt);
         setTimeout(()=>setCopied(""), 3000);
     };
-    console.log("3", post);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "prompt_card",
         children: [
@@ -46,7 +45,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                             className: "rounded-full object-contain"
                         }, void 0, false, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 31,
+                            lineNumber: 29,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -57,7 +56,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                                     children: post.creator.username
                                 }, void 0, false, {
                                     fileName: "[project]/components/PromptCard.jsx",
-                                    lineNumber: 39,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -65,13 +64,13 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                                     children: post.creator.email
                                 }, void 0, false, {
                                     fileName: "[project]/components/PromptCard.jsx",
-                                    lineNumber: 42,
+                                    lineNumber: 40,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 38,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -83,23 +82,23 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                                 height: 12
                             }, void 0, false, {
                                 fileName: "[project]/components/PromptCard.jsx",
-                                lineNumber: 47,
+                                lineNumber: 45,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 46,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/PromptCard.jsx",
-                    lineNumber: 27,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 26,
+                lineNumber: 24,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -107,7 +106,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                 children: post.prompt
             }, void 0, false, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 59,
+                lineNumber: 57,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -119,7 +118,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 60,
+                lineNumber: 58,
                 columnNumber: 7
             }, this),
             session?.user.id === post.creator._id && pathName === "/profile" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -131,7 +130,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                         children: "Edit"
                     }, void 0, false, {
                         fileName: "[project]/components/PromptCard.jsx",
-                        lineNumber: 68,
+                        lineNumber: 66,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -140,19 +139,19 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                         children: "Delete"
                     }, void 0, false, {
                         fileName: "[project]/components/PromptCard.jsx",
-                        lineNumber: 73,
+                        lineNumber: 71,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 67,
+                lineNumber: 65,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/PromptCard.jsx",
-        lineNumber: 25,
+        lineNumber: 23,
         columnNumber: 5
     }, this);
 };
@@ -171,7 +170,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$PromptCard$2e$
 ;
 ;
 const Profile = ({ name, desc, data, handleEdit, handleDelete })=>{
-    console.log("3", data);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "w-full",
         children: [
@@ -185,12 +183,12 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete })=>{
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 9,
+                    lineNumber: 7,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Profile.jsx",
-                lineNumber: 8,
+                lineNumber: 6,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -198,7 +196,7 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete })=>{
                 children: desc
             }, void 0, false, {
                 fileName: "[project]/components/Profile.jsx",
-                lineNumber: 11,
+                lineNumber: 9,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -209,18 +207,18 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete })=>{
                         handleDelete: ()=>handleDelete && handleDelete(post)
                     }, post._id, false, {
                         fileName: "[project]/components/Profile.jsx",
-                        lineNumber: 15,
+                        lineNumber: 13,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/Profile.jsx",
-                lineNumber: 13,
+                lineNumber: 11,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Profile.jsx",
-        lineNumber: 7,
+        lineNumber: 5,
         columnNumber: 5
     }, this);
 };

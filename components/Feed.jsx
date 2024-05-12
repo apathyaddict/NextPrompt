@@ -10,8 +10,6 @@ const Feed = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
-  console.log(posts);
-
   const PromptCardList = ({ data, handleTagClick }) => {
     return (
       <div className="mt-16 prompt_layout">

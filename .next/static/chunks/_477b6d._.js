@@ -23,12 +23,14 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
     _s();
     const [copied, setCopied] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const handleProfileClick = ()=>{};
+    const { data: session } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"])();
+    const pathName = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const handleCopy = ()=>{
         setCopied(post.prompt);
         navigator.clipboard.writeText(post.prompt);
         setTimeout(()=>setCopied(""), 3000);
     };
-    console.log("3", post);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "prompt_card",
         children: [
@@ -45,7 +47,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                             className: "rounded-full object-contain"
                         }, void 0, false, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 27,
+                            lineNumber: 29,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -56,7 +58,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                                     children: post.creator.username
                                 }, void 0, false, {
                                     fileName: "[project]/components/PromptCard.jsx",
-                                    lineNumber: 35,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -64,13 +66,13 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                                     children: post.creator.email
                                 }, void 0, false, {
                                     fileName: "[project]/components/PromptCard.jsx",
-                                    lineNumber: 38,
+                                    lineNumber: 40,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 34,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -82,23 +84,23 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                                 height: 12
                             }, void 0, false, {
                                 fileName: "[project]/components/PromptCard.jsx",
-                                lineNumber: 43,
+                                lineNumber: 45,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 42,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/PromptCard.jsx",
-                    lineNumber: 23,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 22,
+                lineNumber: 24,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -106,7 +108,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                 children: post.prompt
             }, void 0, false, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 55,
+                lineNumber: 57,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -118,17 +120,50 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 56,
+                lineNumber: 58,
                 columnNumber: 7
+            }, this),
+            session?.user.id === post.creator._id && pathName === "/profile" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mt-5 flex-center gap-4 border-t border-gray-100 scroll-pt-3",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "font-inter text-sm green_gradient cursor-pointer",
+                        onClick: handleEdit,
+                        children: "Edit"
+                    }, void 0, false, {
+                        fileName: "[project]/components/PromptCard.jsx",
+                        lineNumber: 66,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "font-inter text-sm orange_gradient cursor-pointer",
+                        onClick: handleDelete,
+                        children: "Delete"
+                    }, void 0, false, {
+                        fileName: "[project]/components/PromptCard.jsx",
+                        lineNumber: 71,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/PromptCard.jsx",
+                lineNumber: 65,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/PromptCard.jsx",
-        lineNumber: 21,
+        lineNumber: 23,
         columnNumber: 5
     }, this);
 };
-_s(PromptCard, "s4GBcElBtmQIKLmd0CXFH/qR7Ps=");
+_s(PromptCard, "LOTlQ/oyI/JVovdo/zlEDER1avQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
+    ];
+});
 _c = PromptCard;
 const __TURBOPACK__default__export__ = PromptCard;
 var _c;
@@ -157,7 +192,6 @@ const Feed = ()=>{
     const [searchText, setSearchText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [searchTimeout, setSearchTimeout] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [searchedResults, setSearchedResults] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
-    console.log(posts);
     const PromptCardList = ({ data, handleTagClick })=>{
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "mt-16 prompt_layout",
@@ -166,12 +200,12 @@ const Feed = ()=>{
                     handleTagClick: handleTagClick
                 }, post._id, false, {
                     fileName: "[project]/components/Feed.jsx",
-                    lineNumber: 19,
+                    lineNumber: 17,
                     columnNumber: 11
                 }, this))
         }, void 0, false, {
             fileName: "[project]/components/Feed.jsx",
-            lineNumber: 17,
+            lineNumber: 15,
             columnNumber: 7
         }, this);
     };
@@ -198,12 +232,12 @@ const Feed = ()=>{
                     className: "search_input peer"
                 }, void 0, false, {
                     fileName: "[project]/components/Feed.jsx",
-                    lineNumber: 43,
+                    lineNumber: 41,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
-                lineNumber: 42,
+                lineNumber: 40,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PromptCardList, {
@@ -211,13 +245,13 @@ const Feed = ()=>{
                 handleTagClick: ()=>{}
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
-                lineNumber: 53,
+                lineNumber: 51,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Feed.jsx",
-        lineNumber: 41,
+        lineNumber: 39,
         columnNumber: 5
     }, this);
 };
