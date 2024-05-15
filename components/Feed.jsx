@@ -4,12 +4,17 @@ import React from "react";
 import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 import axios from "axios";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Feed = ({ router }) => {
   const [posts, setAllPosts] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
 
   const PromptCardList = ({ data, handleTagClick }) => {
     return (
@@ -19,43 +24,32 @@ const Feed = ({ router }) => {
             key={post._id}
             post={post}
             handleTagClick={handleTagClick}
+            searchParams={searchParams}
           />
         ))}
       </div>
     );
   };
 
-  const handleSearchChange = (e) => {
-    setSearchText(e.target.value);
-  };
+  function handleSearch(term) {
+    const params = new URLSearchParams(searchParams);
+    if (term) {
+      params.set("query", term);
+    } else {
+      params.delete("query");
+    }
+    replace(`${pathname}?${params.toString()}`);
+  }
 
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("api/prompt");
       const data = await response.json();
+
       setAllPosts(data);
     };
     fetchPosts();
   }, []);
-
-  useEffect(() => {
-    router.push(`/api/prompt?search=${searchText}`);
-  }, [searchText, router]);
-
-  // const searchPrompts = async (searchText) => {
-  //   try {
-  //     const response = await axios.get(
-  //       `api/prompt?search=${encodeURIComponent(searchText)}`
-  //     );
-  //     setSearchedResults(response.data);
-  //     console.log(searchedResults);
-  //     return searchedResults;
-  //   } catch (error) {
-  //     if (error.response) {
-  //       console.log(error.response.data.error);
-  //     }
-  //   }
-  // };
 
   return (
     <section className="feed">
@@ -63,15 +57,20 @@ const Feed = ({ router }) => {
         <input
           type="text"
           placeholder="Search for a tag or a username"
-          value={searchText}
-          onChange={handleSearchChange}
+          onChange={(e) => {
+            handleSearch(e.target.value);
+          }}
+          defaultValue={searchParams.get("query")?.toString()}
           required
           className="search_input peer"
         />
-        {/* <button onClick={searchPrompts}>Search</button> */}
       </form>
 
-      <PromptCardList data={posts} handleTagClick={() => {}} />
+      <PromptCardList
+        data={posts}
+        searchParams={searchParams}
+        handleTagClick={() => {}}
+      />
     </section>
   );
 };

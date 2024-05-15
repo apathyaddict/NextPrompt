@@ -5,9 +5,20 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
+const PromptCard = ({
+  post,
+  handleEdit,
+  handleDelete,
+  handleTagClick,
+  searchParams:{
+    searchParams: {
+      query?: string}
+  },
+}) => {
   const [copied, setCopied] = useState("");
   const handleProfileClick = () => {};
+  const query = searchParams?.query || "";
+  console.log(query, "query");
 
   const { data: session } = useSession();
   const pathName = usePathname();
