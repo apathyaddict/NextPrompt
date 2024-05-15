@@ -40,20 +40,29 @@ const Feed = ({ router }) => {
     } else {
       params.delete("query");
     }
-    console.log("Updated searchParams:", params.toString());
-    console.log(typeof searchParams.query, searchParams.query);
+
     replace(`${pathname}?${params.toString()}`);
   }
+
+  const query = searchParams?.get("query");
+  console.log(query, "query");
 
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("api/prompt");
       const data = await response.json();
 
-      setAllPosts(data);
+      if (!query) {
+        setAllPosts(data);
+      } else {
+        const filteredPosts = data.filter((post) => {
+          return post.prompt.toLowerCase().includes(query.toLowerCase());
+        });
+        setAllPosts(filteredPosts);
+      }
     };
     fetchPosts();
-  }, []);
+  }, [query]);
 
   return (
     <section className="feed">
