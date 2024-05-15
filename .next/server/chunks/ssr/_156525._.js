@@ -18,7 +18,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navi
 ;
 ;
 ;
-const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchParams })=>{
+const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
     const [copied, setCopied] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const handleProfileClick = ()=>{};
     const { data: session } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSession"])();
@@ -45,7 +45,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchPara
                             className: "rounded-full object-contain"
                         }, void 0, false, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 35,
+                            lineNumber: 29,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -56,7 +56,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchPara
                                     children: post.creator.username
                                 }, void 0, false, {
                                     fileName: "[project]/components/PromptCard.jsx",
-                                    lineNumber: 43,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -64,13 +64,13 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchPara
                                     children: post.creator.email
                                 }, void 0, false, {
                                     fileName: "[project]/components/PromptCard.jsx",
-                                    lineNumber: 46,
+                                    lineNumber: 40,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 42,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -83,23 +83,23 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchPara
                                 alt: "copy button"
                             }, void 0, false, {
                                 fileName: "[project]/components/PromptCard.jsx",
-                                lineNumber: 51,
+                                lineNumber: 45,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/PromptCard.jsx",
-                            lineNumber: 50,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/PromptCard.jsx",
-                    lineNumber: 31,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 30,
+                lineNumber: 24,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -107,7 +107,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchPara
                 children: post.prompt
             }, void 0, false, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 64,
+                lineNumber: 58,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -119,7 +119,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchPara
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 65,
+                lineNumber: 59,
                 columnNumber: 7
             }, this),
             session?.user.id === post.creator._id && pathName === "/profile" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -131,7 +131,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchPara
                         children: "Edit"
                     }, void 0, false, {
                         fileName: "[project]/components/PromptCard.jsx",
-                        lineNumber: 73,
+                        lineNumber: 67,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -140,19 +140,19 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick, searchPara
                         children: "Delete"
                     }, void 0, false, {
                         fileName: "[project]/components/PromptCard.jsx",
-                        lineNumber: 78,
+                        lineNumber: 72,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PromptCard.jsx",
-                lineNumber: 72,
+                lineNumber: 66,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/PromptCard.jsx",
-        lineNumber: 29,
+        lineNumber: 23,
         columnNumber: 5
     }, this);
 };
@@ -169,11 +169,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/future/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$PromptCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/PromptCard.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/axios/lib/axios.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 "__TURBOPACK__ecmascript__hoisting__location__";
 "use client";
-;
-;
 ;
 ;
 ;
@@ -184,57 +181,53 @@ const Feed = ({ router })=>{
     const [searchText, setSearchText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [searchTimeout, setSearchTimeout] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [searchedResults, setSearchedResults] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
-    const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSearchParams"])();
-    const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["usePathname"])();
-    const { replace } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
-    const PromptCardList = ({ data, handleTagClick, searchParams })=>{
+    const PromptCardList = ({ data, handleTagClick })=>{
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "mt-16 prompt_layout",
             children: data.map((post)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$PromptCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                     post: post,
-                    handleTagClick: handleTagClick,
-                    searchParams: searchParams
+                    handleTagClick: handleTagClick
                 }, post._id, false, {
                     fileName: "[project]/components/Feed.jsx",
-                    lineNumber: 23,
+                    lineNumber: 18,
                     columnNumber: 11
                 }, this))
         }, void 0, false, {
             fileName: "[project]/components/Feed.jsx",
-            lineNumber: 21,
+            lineNumber: 16,
             columnNumber: 7
         }, this);
     };
-    function handleSearch(term) {
-        const params = new URLSearchParams(searchParams);
-        if (term) {
-            params.set("query", term);
-        } else {
-            params.delete("query");
-        }
-        replace(`${pathname}?${params.toString()}`);
-    }
-    const query = searchParams?.get("query");
+    const handleSearchChange = (e)=>{
+        setSearchText(e.target.value);
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const fetchPosts = async ()=>{
             const response = await fetch("api/prompt");
             const data = await response.json();
-            if (!query) {
-                setAllPosts(data);
-            } else {
-                const filteredPosts = data.filter((post)=>{
-                    const promptIncludesQuery = post.prompt.toLowerCase().includes(query.toLowerCase());
-                    const tagIncludesQuery = post.tag.toLowerCase().includes(query.toLowerCase());
-                    const creatorIncludesQuery = post.creator.username.toLowerCase().includes(query.toLowerCase());
-                    return promptIncludesQuery || tagIncludesQuery || creatorIncludesQuery;
-                });
-                setAllPosts(filteredPosts);
-            }
+            setAllPosts(data);
         };
         fetchPosts();
+    }, []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        router.push(`/api/prompt?search=${text}`);
     }, [
-        query
+        searchText
     ]);
+    // const searchPrompts = async (searchText) => {
+    //   try {
+    //     const response = await axios.get(
+    //       `api/prompt?search=${encodeURIComponent(searchText)}`
+    //     );
+    //     setSearchedResults(response.data);
+    //     console.log(searchedResults);
+    //     return searchedResults;
+    //   } catch (error) {
+    //     if (error.response) {
+    //       console.log(error.response.data.error);
+    //     }
+    //   }
+    // };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "feed",
         children: [
@@ -243,35 +236,32 @@ const Feed = ({ router })=>{
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                     type: "text",
                     placeholder: "Search for a tag or a username",
-                    onChange: (e)=>{
-                        handleSearch(e.target.value);
-                    },
-                    defaultValue: searchParams.get("query")?.toString(),
+                    value: searchText,
+                    onChange: handleSearchChange,
                     required: true,
                     className: "search_input peer"
                 }, void 0, false, {
                     fileName: "[project]/components/Feed.jsx",
-                    lineNumber: 78,
+                    lineNumber: 63,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
-                lineNumber: 77,
+                lineNumber: 62,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(PromptCardList, {
                 data: posts,
-                searchParams: searchParams,
                 handleTagClick: ()=>{}
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
-                lineNumber: 90,
+                lineNumber: 74,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Feed.jsx",
-        lineNumber: 76,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
 };
@@ -282,12 +272,7 @@ const __TURBOPACK__default__export__ = Feed;
 
 
 })()),
-"[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)": (function({ r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require }) { !function() {
-
-module.exports = __turbopack_require__("[project]/node_modules/next/dist/client/components/navigation.js [app-ssr] (ecmascript)");
-
-}.call(this) }),
 
 };
 
-//# sourceMappingURL=_b8b21f._.js.map
+//# sourceMappingURL=_156525._.js.map

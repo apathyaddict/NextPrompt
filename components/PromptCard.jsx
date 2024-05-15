@@ -5,7 +5,13 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
+const PromptCard = ({
+  post,
+  handleEdit,
+  handleDelete,
+  handleTagClick,
+  searchParams,
+}) => {
   const [copied, setCopied] = useState("");
   const handleProfileClick = () => {};
 
@@ -50,6 +56,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               }
               width={12}
               height={12}
+              alt="copy button"
             />
           </div>
         </div>

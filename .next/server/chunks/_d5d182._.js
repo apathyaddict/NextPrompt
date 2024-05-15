@@ -26,10 +26,6 @@ const UserSchema = new __TURBOPACK__commonjs__external__mongoose__["Schema"]({
         required: [
             true,
             "Username is required!"
-        ],
-        match: [
-            /^(?=.{4,21}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
-            "Username invalid, it should contain 4-20 alphanumeric letters and be unique!"
         ]
     },
     image: {
@@ -114,7 +110,7 @@ const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
                 if (!userExists) {
                     await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$user$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].create({
                         email: profile.email,
-                        username: profile.name.replace(/\s/g, "").toLowerCase(),
+                        username: profile.login,
                         image: profile.picture
                     });
                 }

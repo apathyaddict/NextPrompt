@@ -1,6 +1,9 @@
+"use client";
 import Feed from "@components/Feed";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
+  const router = useRouter();
   return (
     <>
       <section className="w-full flex-center flex-col">
@@ -17,7 +20,7 @@ const Home = () => {
         </p>
       </section>
 
-      <Feed />
+      <Feed router={router} />
     </>
   );
 };

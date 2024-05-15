@@ -74,9 +74,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$database$2e$js__$5b
 "__TURBOPACK__ecmascript__hoisting__location__";
 ;
 ;
-const GET = async (request)=>{
+const GET = async (req)=>{
     try {
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$database$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["connectToDB"])();
+        // console.log("query", req);
+        // const { search } = req.query;
+        // console.log("query", req.query);
+        // let query = {};
         const prompts = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$prompt$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].find({}).populate("creator");
         return new Response(JSON.stringify(prompts), {
             status: 200
