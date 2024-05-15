@@ -202,7 +202,6 @@ const Feed = ({ router })=>{
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const { replace } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const PromptCardList = ({ data, handleTagClick, searchParams })=>{
-        console.log("prompt card list", searchParams.toString());
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "mt-16 prompt_layout",
             children: data.map((post)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$PromptCard$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -211,12 +210,12 @@ const Feed = ({ router })=>{
                     searchParams: searchParams
                 }, post._id, false, {
                     fileName: "[project]/components/Feed.jsx",
-                    lineNumber: 25,
+                    lineNumber: 23,
                     columnNumber: 11
                 }, this))
         }, void 0, false, {
             fileName: "[project]/components/Feed.jsx",
-            lineNumber: 23,
+            lineNumber: 21,
             columnNumber: 7
         }, this);
     };
@@ -230,7 +229,6 @@ const Feed = ({ router })=>{
         replace(`${pathname}?${params.toString()}`);
     }
     const query = searchParams?.get("query");
-    console.log(query, "query");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const fetchPosts = async ()=>{
             const response = await fetch("api/prompt");
@@ -239,7 +237,10 @@ const Feed = ({ router })=>{
                 setAllPosts(data);
             } else {
                 const filteredPosts = data.filter((post)=>{
-                    return post.prompt.toLowerCase().includes(query.toLowerCase());
+                    const promptIncludesQuery = post.prompt.toLowerCase().includes(query.toLowerCase());
+                    const tagIncludesQuery = post.tag.toLowerCase().includes(query.toLowerCase());
+                    const creatorIncludesQuery = post.creator.username.toLowerCase().includes(query.toLowerCase());
+                    return promptIncludesQuery || tagIncludesQuery || creatorIncludesQuery;
                 });
                 setAllPosts(filteredPosts);
             }
@@ -264,12 +265,12 @@ const Feed = ({ router })=>{
                     className: "search_input peer"
                 }, void 0, false, {
                     fileName: "[project]/components/Feed.jsx",
-                    lineNumber: 70,
+                    lineNumber: 78,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
-                lineNumber: 69,
+                lineNumber: 77,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PromptCardList, {
@@ -278,13 +279,13 @@ const Feed = ({ router })=>{
                 handleTagClick: ()=>{}
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
-                lineNumber: 82,
+                lineNumber: 90,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Feed.jsx",
-        lineNumber: 68,
+        lineNumber: 76,
         columnNumber: 5
     }, this);
 };

@@ -17,8 +17,6 @@ const Feed = ({ router }) => {
   const { replace } = useRouter();
 
   const PromptCardList = ({ data, handleTagClick, searchParams }) => {
-    console.log("prompt card list", searchParams.toString());
-
     return (
       <div className="mt-16 prompt_layout">
         {data.map((post) => (
@@ -45,7 +43,6 @@ const Feed = ({ router }) => {
   }
 
   const query = searchParams?.get("query");
-  console.log(query, "query");
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -56,7 +53,18 @@ const Feed = ({ router }) => {
         setAllPosts(data);
       } else {
         const filteredPosts = data.filter((post) => {
-          return post.prompt.toLowerCase().includes(query.toLowerCase());
+          const promptIncludesQuery = post.prompt
+            .toLowerCase()
+            .includes(query.toLowerCase());
+          const tagIncludesQuery = post.tag
+            .toLowerCase()
+            .includes(query.toLowerCase());
+          const creatorIncludesQuery = post.creator.username
+            .toLowerCase()
+            .includes(query.toLowerCase());
+          return (
+            promptIncludesQuery || tagIncludesQuery || creatorIncludesQuery
+          );
         });
         setAllPosts(filteredPosts);
       }
