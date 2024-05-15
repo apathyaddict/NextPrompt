@@ -16,7 +16,9 @@ const Feed = ({ router }) => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const PromptCardList = ({ data, handleTagClick }) => {
+  const PromptCardList = ({ data, handleTagClick, searchParams }) => {
+    console.log("prompt card list", searchParams.toString());
+
     return (
       <div className="mt-16 prompt_layout">
         {data.map((post) => (
@@ -38,6 +40,8 @@ const Feed = ({ router }) => {
     } else {
       params.delete("query");
     }
+    console.log("Updated searchParams:", params.toString());
+    console.log(typeof searchParams.query, searchParams.query);
     replace(`${pathname}?${params.toString()}`);
   }
 

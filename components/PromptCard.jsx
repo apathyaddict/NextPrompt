@@ -10,14 +10,12 @@ const PromptCard = ({
   handleEdit,
   handleDelete,
   handleTagClick,
-  searchParams:{
-    searchParams: {
-      query?: string}
-  },
+  searchParams,
 }) => {
   const [copied, setCopied] = useState("");
   const handleProfileClick = () => {};
   const query = searchParams?.query || "";
+
   console.log(query, "query");
 
   const { data: session } = useSession();
