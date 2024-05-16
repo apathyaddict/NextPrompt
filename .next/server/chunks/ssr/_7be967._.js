@@ -173,6 +173,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$PromptCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/PromptCard.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/axios/lib/axios.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$use$2d$debounce$2f$dist$2f$index$2e$module$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/use-debounce/dist/index.module.js [app-ssr] (ecmascript)");
 "__TURBOPACK__ecmascript__hoisting__location__";
 "use client";
 ;
@@ -182,7 +183,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navi
 ;
 ;
 ;
-const Feed = ({ router })=>{
+;
+const Feed = ()=>{
     const [posts, setAllPosts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [searchText, setSearchText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [searchTimeout, setSearchTimeout] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -199,16 +201,16 @@ const Feed = ({ router })=>{
                     searchParams: searchParams
                 }, post._id, false, {
                     fileName: "[project]/components/Feed.jsx",
-                    lineNumber: 23,
+                    lineNumber: 24,
                     columnNumber: 11
                 }, this))
         }, void 0, false, {
             fileName: "[project]/components/Feed.jsx",
-            lineNumber: 21,
+            lineNumber: 22,
             columnNumber: 7
         }, this);
     };
-    function handleSearch(term) {
+    const handleSearch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$use$2d$debounce$2f$dist$2f$index$2e$module$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useDebouncedCallback"])((term)=>{
         const params = new URLSearchParams(searchParams);
         if (term) {
             params.set("query", term);
@@ -217,7 +219,7 @@ const Feed = ({ router })=>{
         }
         // console.log(params.toString());
         replace(`${pathname}?${params.toString()}`);
-    }
+    }, 300);
     const query = searchParams?.get("query");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const fetchPosts = async ()=>{
@@ -255,12 +257,12 @@ const Feed = ({ router })=>{
                     className: "search_input peer"
                 }, void 0, false, {
                     fileName: "[project]/components/Feed.jsx",
-                    lineNumber: 78,
+                    lineNumber: 79,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
-                lineNumber: 77,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(PromptCardList, {
@@ -273,13 +275,13 @@ const Feed = ({ router })=>{
                 }
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
-                lineNumber: 90,
+                lineNumber: 91,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Feed.jsx",
-        lineNumber: 76,
+        lineNumber: 77,
         columnNumber: 5
     }, this);
 };

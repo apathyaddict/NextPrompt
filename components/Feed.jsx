@@ -6,8 +6,9 @@ import PromptCard from "./PromptCard";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "next/navigation";
+import { useDebouncedCallback } from "use-debounce";
 
-const Feed = ({ router }) => {
+const Feed = () => {
   const [posts, setAllPosts] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
@@ -31,7 +32,7 @@ const Feed = ({ router }) => {
     );
   };
 
-  function handleSearch(term) {
+  const handleSearch = useDebouncedCallback((term) => {
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set("query", term);
@@ -40,7 +41,7 @@ const Feed = ({ router }) => {
     }
     // console.log(params.toString());
     replace(`${pathname}?${params.toString()}`);
-  }
+  }, 300);
 
   const query = searchParams?.get("query");
 
