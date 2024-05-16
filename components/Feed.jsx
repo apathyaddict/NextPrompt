@@ -4,15 +4,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 
 const Feed = () => {
   const [posts, setAllPosts] = useState([]);
-  const [searchText, setSearchText] = useState("");
-  const [searchTimeout, setSearchTimeout] = useState(null);
-  const [searchedResults, setSearchedResults] = useState([]);
+
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -25,7 +22,6 @@ const Feed = () => {
             key={post._id}
             post={post}
             handleTagClick={handleTagClick}
-            searchParams={searchParams}
           />
         ))}
       </div>
@@ -90,7 +86,6 @@ const Feed = () => {
 
       <PromptCardList
         data={posts}
-        searchParams={searchParams}
         handleTagClick={(clickedTag) => {
           const params = new URLSearchParams(searchParams);
           params.set("query", clickedTag);
