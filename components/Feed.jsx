@@ -90,7 +90,9 @@ const Feed = ({ router }) => {
       <PromptCardList
         data={posts}
         searchParams={searchParams}
-        handleTagClick={() => {}}
+        handleTagClick={(clickedTag) => {
+          console.log(clickedTag);
+        }}
       />
     </section>
   );
