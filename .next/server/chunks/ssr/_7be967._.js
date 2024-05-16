@@ -215,6 +215,7 @@ const Feed = ({ router })=>{
         } else {
             params.delete("query");
         }
+        // console.log(params.toString());
         replace(`${pathname}?${params.toString()}`);
     }
     const query = searchParams?.get("query");
@@ -266,7 +267,9 @@ const Feed = ({ router })=>{
                 data: posts,
                 searchParams: searchParams,
                 handleTagClick: (clickedTag)=>{
-                    console.log(clickedTag);
+                    const params = new URLSearchParams(searchParams);
+                    params.set("query", clickedTag);
+                    replace(`${pathname}?${params.toString()}`);
                 }
             }, void 0, false, {
                 fileName: "[project]/components/Feed.jsx",
