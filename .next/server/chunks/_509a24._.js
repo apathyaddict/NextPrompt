@@ -82,7 +82,6 @@ const GET = async (request, { params })=>{
         const prompts = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$prompt$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].find({
             creator: params.id
         }).populate("creator");
-        console.log("route", prompts);
         return new Response(JSON.stringify(prompts), {
             status: 200
         });

@@ -2,5 +2,11 @@
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/page": "app/page.js",
   "/api/prompt/route": "app/api/prompt/route.js",
-  "/create-prompt/page": "app/create-prompt/page.js"
+  "/create-prompt/page": "app/create-prompt/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/api/users/[id]/posts/route": "app/api/users/[id]/posts/route.js",
+  "/update-prompt/page": "app/update-prompt/page.js",
+  "/api/prompt/[id]/route": "app/api/prompt/[id]/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/profile/[username]/route": "app/profile/[username]/route.js"
 }

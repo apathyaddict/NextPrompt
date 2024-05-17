@@ -14,7 +14,7 @@ const Feed = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const PromptCardList = ({ data, handleTagClick, searchParams }) => {
+  const PromptCardList = ({ data, handleTagClick }) => {
     return (
       <div className="mt-16 prompt_layout">
         {data.map((post) => (
@@ -35,7 +35,6 @@ const Feed = () => {
     } else {
       params.delete("query");
     }
-    // console.log(params.toString());
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 

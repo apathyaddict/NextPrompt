@@ -8,10 +8,10 @@ import { usePathname, useRouter } from "next/navigation";
 const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const [copied, setCopied] = useState("");
 
-  // const handleProfileClick = () => {
-  //   const clickedTag = post.tag;
-  //   console.log(clickedTag);
-  // };
+  const handleProfileClick = () => {
+    console.log(post.creator);
+    router.push(`/profile/${post.creator.username}`);
+  };
 
   const { data: session } = useSession();
   const pathName = usePathname();
@@ -28,8 +28,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       <div className="flex justify-between items-start gap-5">
         <div
           className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
-          // onClick={[]}
-        >
+          onClick={handleProfileClick}>
           <Image
             src={post.creator.image}
             alt="user_image"
