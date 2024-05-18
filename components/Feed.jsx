@@ -3,7 +3,7 @@
 import React, { Suspense } from "react";
 import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
-import axios from "axios";
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 
@@ -71,21 +71,21 @@ const Feed = () => {
   }, [query]);
 
   return (
-    <section className="feed">
-      <form className="relative w-full flex-center">
-        <input
-          type="text"
-          placeholder="Search for a tag or a username"
-          onChange={(e) => {
-            handleSearch(e.target.value);
-          }}
-          defaultValue={searchParams.get("query")?.toString()}
-          required
-          className="search_input peer"
-        />
-      </form>
+    <Suspense>
+      <section className="feed">
+        <form className="relative w-full flex-center">
+          <input
+            type="text"
+            placeholder="Search for a tag or a username"
+            onChange={(e) => {
+              handleSearch(e.target.value);
+            }}
+            defaultValue={searchParams.get("query")?.toString()}
+            required
+            className="search_input peer"
+          />
+        </form>
 
-      <Suspense>
         <PromptCardList
           data={posts}
           handleTagClick={(clickedTag) => {
@@ -94,8 +94,8 @@ const Feed = () => {
             replace(`${pathname}?${params.toString()}`);
           }}
         />
-      </Suspense>
-    </section>
+      </section>
+    </Suspense>
   );
 };
 
