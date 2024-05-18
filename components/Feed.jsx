@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 import axios from "axios";
@@ -83,14 +83,16 @@ const Feed = () => {
         />
       </form>
 
-      <PromptCardList
-        data={posts}
-        handleTagClick={(clickedTag) => {
-          const params = new URLSearchParams(searchParams);
-          params.set("query", clickedTag);
-          replace(`${pathname}?${params.toString()}`);
-        }}
-      />
+      <Suspense>
+        <PromptCardList
+          data={posts}
+          handleTagClick={(clickedTag) => {
+            const params = new URLSearchParams(searchParams);
+            params.set("query", clickedTag);
+            replace(`${pathname}?${params.toString()}`);
+          }}
+        />
+      </Suspense>
     </section>
   );
 };
