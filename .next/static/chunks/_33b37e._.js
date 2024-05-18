@@ -27,8 +27,8 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick })=>{
     const pathName = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const handleProfileClick = ()=>{
-        console.log(post.creator);
-        router.push(`/profile/${post.creator._id}`);
+        if (post.creator._id === session?.user.id) return router.push("/profile");
+        router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
     };
     const handleCopy = ()=>{
         setCopied(post.prompt);
