@@ -1,13 +1,13 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
 const nextConfig = {
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
 };
+
 module.exports = {
+  ...nextConfig,
   experimental: {
     missingSuspenseWithCSRBailout: false,
   },
 };
-
-export default nextConfig;
