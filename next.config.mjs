@@ -4,5 +4,10 @@ const nextConfig = {
     domains: ["lh3.googleusercontent.com"],
   },
 };
+module.exports = {
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
+};
 
 export default nextConfig;
