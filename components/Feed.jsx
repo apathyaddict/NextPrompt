@@ -71,7 +71,7 @@ const Feed = () => {
   }, [query]);
 
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <section className="feed">
         <form className="relative w-full flex-center">
           <input
